@@ -1,3 +1,5 @@
+var loop = 1;
+
 // jQuery snippet for changing HTML from into JSON
 (function ($) {
     $.fn.serializeFormJSON = function () {
@@ -21,10 +23,14 @@
 $('#submit').click(function(e) {
     // prevent default submiting form
     e.preventDefault();
-    
+    sendToSpreadSheet();
+});
+
+var sendToSpreadSheet = function() {    
     // serialize data to JSON
-	var data = $('#row1').serializeFormJSON();
+	var data = $('#row' + loop).serializeFormJSON();
     console.log(data);
+
     $.ajax({
        	url: 'https://sheetsu.com/apis/04fbd25d',
        	data: data,
@@ -36,26 +42,8 @@ $('#submit').click(function(e) {
         //page could be a good idea
         success: function(data) {
     	   	console.log(data);
-            var data = $('#row2').serializeFormJSON();
-            $.ajax({
-                url: 'https://sheetsu.com/apis/04fbd25d',
-                data: data,
-                dataType: 'json',
-                type: 'POST',
-                
-                // place for handling successful response
-                // showing (redirecting to) something like /thanks.html
-                //page could be a good idea
-                success: function(data) {
-                    console.log(data);
-                },
-                
-                // handling error response
-                error: function(data) {
-                    console.log(data);
-                }
-            });
-
+            loop += 1;
+            sendToSpreadSheet();
         },
         
         // handling error response
@@ -64,7 +52,5 @@ $('#submit').click(function(e) {
         }
     });
 
-
-    
     return false;
-});
+};
