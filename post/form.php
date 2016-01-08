@@ -15,40 +15,21 @@
 </form>
 
 <h2>アジェンダ</h2>
-<form id="row2">
+<? for($i = 2; $i < 7; $i ++): ?>
+<form id="row<?= $i ?>">
   <input type="hidden" name="type" value="2">
   <input type="text" name="agenda">
   <input type="text" name="time">
-</form>
-<form id="row3">
-  <input type="hidden" name="type" value="2">
-  <input type="text" name="agenda">
-  <input type="text" name="time">
-</form>
-<form id="row4">
-  <input type="hidden" name="type" value="2">
-  <input type="text" name="agenda">
-  <input type="text" name="time">
-</form>
-<form id="row5">
-  <input type="hidden" name="type" value="2">
-  <input type="text" name="agenda">
-  <input type="text" name="time">
-</form>
+</form>   
+<? endfor; ?>
 
-<h2>参加者</h2>
-<form id="row6">
+<h2>参加名</h2>
+<? for(; $i < 15; $i ++): ?>
+<form id="row<?= $i ?>">
   <input type="hidden" name="type" value="3">
   <input type="text" name="name">
 </form>
-<form id="row7">
-  <input type="hidden" name="type" value="3">
-  <input type="text" name="name">
-</form>
-<form id="row8">
-  <input type="hidden" name="type" value="3">
-  <input type="text" name="name">
-</form>
+<? endfor; ?>
 
 <button id="submit">submit</button>
 

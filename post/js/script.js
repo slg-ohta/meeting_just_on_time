@@ -29,7 +29,13 @@ $('#submit').click(function(e) {
 var sendToSpreadSheet = function() {    
     // serialize data to JSON
 	var data = $('#row' + loop).serializeFormJSON();
-    console.log(data);
+    if (data.title == "" || data.agenda == "" || data.name == "") {
+        console.log(data);
+        loop += 1;
+        sendToSpreadSheet(); 
+        return false;
+    }
+    console.log(loop);
 
     $.ajax({
        	url: 'https://sheetsu.com/apis/04fbd25d',
