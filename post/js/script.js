@@ -28,6 +28,9 @@ $('#submit').click(function(e) {
 
 var sendToSpreadSheet = function() {    
     // serialize data to JSON
+    if (loop == 15) {
+        return;
+    }
 	var data = $('#row' + loop).serializeFormJSON();
     if (data.title == "" || data.agenda == "" || data.name == "") {
         console.log(data);
@@ -35,6 +38,7 @@ var sendToSpreadSheet = function() {
         sendToSpreadSheet(); 
         return false;
     }
+    console.log(data);
     console.log(loop);
 
     $.ajax({
