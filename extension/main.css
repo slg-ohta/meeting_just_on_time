@@ -1,6 +1,35 @@
 body {
+    background-color: #ffff00;
+    font-size: 100.01%;
+    width: px;
+    height: px;
+}
+
+
+#title {
 	background-color: #ffff00;
 	font-size: 100.01%;
 	width: 420px;
-	height: 680px;
+	height: 800px;
+}
+
+#time {
+    background-color: #ffff00;
+    font-size: 100.01%;
+    width: 420px;
+    height: 800px;
+}
+
+#agenda {
+    background-color: #ffff00;
+    font-size: 100.01%;
+    width: 420px;
+    height: 800px;
+}
+
+#member {
+    background-color: #cc0000;
+    font-size: 100.01%;
+    width: 420px;
+    height: 800px;
 }
