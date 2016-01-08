@@ -1,0 +1,20 @@
+{
+  "name": "会議なう",
+  "version": "1",
+  "manifest_version": 2,
+  "description": "meeting just on time!",
+  "icons": {
+    "16" : "images/sample_16.png",
+    "48" : "images/sample_48.png",
+    "128" : "images/sample_128.png"
+  },
+  "browser_action": {
+    "default_icon": "images/sample_16.png",
+    "default_title": "Meeting on just time",
+    "default_popup": "main.html"
+  },
+  "background": {
+    //"scripts": ["js/background.js"],
+    "css": ["css/contents_style.css"]
+  }
+}
